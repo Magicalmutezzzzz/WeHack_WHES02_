@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn JavaScript - A Beginner's Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #136da8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #136da8;
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #136da8;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0d4c7a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn JavaScript</h1>
+    </header>
+    <div class="container">
+        <h2>What is JavaScript?</h2>
+        <p>JavaScript is a versatile programming language that allows developers to create dynamic and interactive web pages. It is one of the core technologies of the web alongside HTML and CSS.</p>
+        
+        <h2>Why Learn JavaScript?</h2>
+        <ul>
+            <li>It is the most popular programming language for web development.</li>
+            <li>It enables interactive and dynamic user experiences.</li>
+            <li>Used in front-end and back-end development (Node.js).</li>
+            <li>Huge job market and career opportunities.</li>
+        </ul>
+        
+        <h2>JavaScript Syntax</h2>
+        <p>JavaScript syntax is simple and easy to learn. Below is a basic example:</p>
+        <pre>
+// Display an alert message
+alert('Hello, World!');
+
+// Logging to console
+console.log('This is JavaScript');
+
+// Declaring variables
+let name = 'John';
+const age = 25;
+console.log(name + ' is ' + age + ' years old');
+        </pre>
+        
+        <h2>JavaScript Basics</h2>
+        <h3>Variables</h3>
+        <p>JavaScript has three ways to declare variables: <code>var</code>, <code>let</code>, and <code>const</code>.</p>
+        <pre>
+let city = "New York";
+const country = "USA";
+console.log(city + ", " + country);
+        </pre>
+        
+        <h3>Functions</h3>
+        <p>Functions allow you to reuse code. Here's an example:</p>
+        <pre>
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+console.log(greet("Alice"));
+        </pre>
+        
+        <h3>Events</h3>
+        <p>JavaScript allows you to handle user interactions using events:</p>
+        <pre>
+<button onclick="alert('Button Clicked!')">Click Me</button>
+        </pre>
+        
+        <h2>Advanced JavaScript Concepts</h2>
+        <h3>ES6 Features</h3>
+        <ul>
+            <li>Arrow Functions</li>
+            <li>Template Literals</li>
+            <li>Destructuring</li>
+            <li>Promises & Async/Await</li>
+        </ul>
+        
+        <h3>DOM Manipulation</h3>
+        <p>JavaScript can dynamically update HTML and CSS:</p>
+        <pre>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        </pre>
+        
+        <h2>Where to Learn More</h2>
+        <p>There are many online resources to learn JavaScript:</p>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript Guide</a></li>
+            <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JavaScript Tutorial</a></li>
+        </ul>
+        
+        <h2>Start Coding Now!</h2>
+        <p>Practice is key to mastering JavaScript. Start coding today!</p>
+        <a class="btn" href="https://jsfiddle.net/" target="_blank">Try JavaScript</a>
+    </div>
+</body>
+</html>

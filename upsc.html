@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC Exam Guide - Tech-Tonic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #136da8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .search-container input {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Content */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .section h2 {
+            background: #136da8;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .section p {
+            padding: 10px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d87a0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        UPSC Civil Services Exam - Complete Guide
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search UPSC topics..." onkeyup="searchTopics()">
+    </div>
+
+    <div class="container" id="upsc-content">
+        <div class="section">
+            <h2>What is UPSC?</h2>
+            <p>The Union Public Service Commission (UPSC) conducts the Civil Services Examination (CSE) to recruit candidates for prestigious positions like IAS, IPS, IFS, and other Group A & B services in India.</p>
+        </div>
+
+        <div class="section">
+            <h2>Eligibility Criteria</h2>
+            <p>Age Limit: 21-32 years (General), with relaxation for reserved categories.<br>Educational Qualification: Bachelor's degree from a recognized university.<br>Number of Attempts: 6 (General), 9 (OBC), Unlimited (SC/ST).</p>
+        </div>
+
+        <div class="section">
+            <h2>UPSC Exam Stages</h2>
+            <p>
+                1. **Preliminary Exam (Prelims)** - Objective type, consists of General Studies Paper I & CSAT.<br>
+                2. **Main Exam (Mains)** - Descriptive type, consists of 9 papers.<br>
+                3. **Personality Test (Interview)** - Face-to-face interaction with the UPSC panel.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>UPSC Exam Syllabus</h2>
+            <p>
+                **Prelims:**<br>
+                - General Studies Paper 1: History, Geography, Polity, Economy, Science, Current Affairs.<br>
+                - CSAT (Paper 2): Logical reasoning, Mathematics, Reading comprehension.<br><br>
+                **Mains:**<br>
+                - Essay Paper.<br>
+                - 4 General Studies Papers (History, Polity, Economy, Ethics, etc.).<br>
+                - 2 Optional Subject Papers.<br>
+                - 2 Language Papers.<br><br>
+                **Interview:** Tests candidate’s personality, confidence, and knowledge.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>UPSC Exam Pattern</h2>
+            <p>
+                **Prelims:** 2 Papers (200 marks each).<br>
+                **Mains:** 9 Papers (Total 1750 marks).<br>
+                **Interview:** 275 marks.<br>
+                **Final Selection:** Based on Mains + Interview (2025 marks).
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tech-Tonic. All rights reserved.</p>
+        <a href="#">Contact Us</a>
+        <a href="#">Report Issue</a>
+        <a href="mailto:support@tech-tonic.com">Email</a>
+        <a href="https://instagram.com/techtonic">Instagram</a>
+        <a href="https://twitter.com/techtonic">Twitter</a>
+    </footer>
+
+    <script>
+        function searchTopics() {
+            let query = document.getElementById('search-bar').value.toLowerCase();
+            document.querySelectorAll('.section h2').forEach(el => {
+                el.parentElement.style.display = el.innerText.toLowerCase().includes(query) ? "block" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>

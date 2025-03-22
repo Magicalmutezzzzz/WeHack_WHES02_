@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn C++ - A Beginner's Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #136da8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #136da8;
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #136da8;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0d4c7a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn C++</h1>
+    </header>
+    <div class="container">
+        <h2>What is C++?</h2>
+        <p>C++ is a powerful general-purpose programming language that is widely used for system/software development, game development, and competitive programming.</p>
+        
+        <h2>Why Learn C++?</h2>
+        <ul>
+            <li>It is widely used in high-performance applications.</li>
+            <li>Supports object-oriented programming.</li>
+            <li>Provides low-level memory manipulation capabilities.</li>
+            <li>Great for competitive programming and algorithm development.</li>
+        </ul>
+        
+        <h2>C++ Syntax</h2>
+        <p>C++ syntax is structured and efficient. Below is a basic example:</p>
+        <pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
+        </pre>
+        
+        <h2>C++ Basics</h2>
+        <h3>Variables</h3>
+        <p>C++ supports various data types such as int, float, double, and string.</p>
+        <pre>
+int age = 25;
+double pi = 3.1415;
+string name = "Alice";
+cout << "Name: " << name << ", Age: " << age << endl;
+        </pre>
+        
+        <h3>Functions</h3>
+        <p>Functions in C++ allow you to modularize your code:</p>
+        <pre>
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    cout << "Sum: " << add(5, 3) << endl;
+    return 0;
+}
+        </pre>
+        
+        <h3>Classes and Objects</h3>
+        <p>C++ supports object-oriented programming:</p>
+        <pre>
+class Car {
+public:
+    string brand;
+    int year;
+
+    void display() {
+        cout << "Brand: " << brand << ", Year: " << year << endl;
+    }
+};
+
+int main() {
+    Car myCar;
+    myCar.brand = "Toyota";
+    myCar.year = 2022;
+    myCar.display();
+    return 0;
+}
+        </pre>
+        
+        <h2>Advanced C++ Concepts</h2>
+        <h3>STL (Standard Template Library)</h3>
+        <ul>
+            <li>Vectors</li>
+            <li>Queues & Stacks</li>
+            <li>Maps & Sets</li>
+            <li>Algorithms & Iterators</li>
+        </ul>
+        
+        <h3>Pointers</h3>
+        <p>Pointers allow direct memory access:</p>
+        <pre>
+int x = 10;
+int* ptr = &x;
+cout << "Value: " << *ptr << endl;
+        </pre>
+        
+        <h2>Where to Learn More</h2>
+        <p>There are many online resources to learn C++:</p>
+        <ul>
+            <li><a href="https://cplusplus.com/" target="_blank">CPlusPlus.com</a></li>
+            <li><a href="https://www.geeksforgeeks.org/c-plus-plus/" target="_blank">GeeksForGeeks C++</a></li>
+        </ul>
+        
+        <h2>Start Coding Now!</h2>
+        <p>Practice is key to mastering C++. Start coding today!</p>
+        <a class="btn" href="https://www.onlinegdb.com/" target="_blank">Try C++</a>
+    </div>
+</body>
+</html>

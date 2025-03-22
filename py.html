@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn Python - A Beginner's Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #136da8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #136da8;
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #136da8;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0d4c7a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn Python</h1>
+    </header>
+    <div class="container">
+        <h2>What is Python?</h2>
+        <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used in web development, data science, automation, and artificial intelligence.</p>
+        
+        <h2>Why Learn Python?</h2>
+        <ul>
+            <li>Easy to learn and use.</li>
+            <li>Great for beginners and professionals.</li>
+            <li>Used in various fields such as web development, data science, and AI.</li>
+            <li>Large community and extensive libraries.</li>
+        </ul>
+        
+        <h2>Python Syntax</h2>
+        <p>Python has a simple and readable syntax. Below is a basic example:</p>
+        <pre>
+print("Hello, World!")
+        </pre>
+        
+        <h2>Python Basics</h2>
+        <h3>Variables</h3>
+        <p>Python variables do not require explicit declaration.</p>
+        <pre>
+name = "Alice"
+age = 25
+print(f"Name: {name}, Age: {age}")
+        </pre>
+        
+        <h3>Functions</h3>
+        <p>Functions in Python allow you to reuse code.</p>
+        <pre>
+def add(a, b):
+    return a + b
+
+print("Sum:", add(5, 3))
+        </pre>
+        
+        <h3>Classes and Objects</h3>
+        <p>Python supports object-oriented programming.</p>
+        <pre>
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+    
+    def display(self):
+        print(f"Brand: {self.brand}, Year: {self.year}")
+
+my_car = Car("Toyota", 2022)
+my_car.display()
+        </pre>
+        
+        <h2>Advanced Python Concepts</h2>
+        <h3>List Comprehensions</h3>
+        <pre>
+squares = [x**2 for x in range(10)]
+print(squares)
+        </pre>
+        
+        <h3>Lambda Functions</h3>
+        <pre>
+square = lambda x: x**2
+print(square(5))
+        </pre>
+        
+        <h2>Where to Learn More</h2>
+        <p>There are many online resources to learn Python:</p>
+        <ul>
+            <li><a href="https://docs.python.org/3/" target="_blank">Python Official Docs</a></li>
+            <li><a href="https://www.geeksforgeeks.org/python-programming-language/" target="_blank">GeeksForGeeks Python</a></li>
+        </ul>
+        
+        <h2>Start Coding Now!</h2>
+        <p>Practice is key to mastering Python. Start coding today!</p>
+        <a class="btn" href="https://www.onlinegdb.com/" target="_blank">Try Python</a>
+    </div>
+</body>
+</html>

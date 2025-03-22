@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation - Tectonic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #13a5c2;
+            margin-bottom: 15px;
+        }
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .order-id {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .delivery-time {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #13a5c2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0f8ea5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Order Confirmed!</h2>
+        <p class="message">Thank you for your purchase. Your order has been successfully placed.</p>
+        <p class="order-id">Order ID: <span id="order-id"></span></p>
+        <p class="delivery-time">Estimated Delivery: 5-7 business days</p>
+        <button class="btn" onclick="returnToMain()">Return to Main Menu</button>
+    </div>
+
+    <script>
+        function generateOrderId() {
+            return "TT" + Math.floor(100000 + Math.random() * 900000);
+        }
+        document.getElementById("order-id").innerText = generateOrderId();
+
+        function returnToMain() {
+            window.location.href = "login.html";
+        }
+
+        localStorage.removeItem("cart");
+    </script>
+</body>
+</html>

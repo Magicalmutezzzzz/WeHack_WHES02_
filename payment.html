@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tectonic - Payment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-methods {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .payment-methods button {
+            flex: 1;
+            padding: 10px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .payment-methods button.active {
+            background-color: #13a5c2;
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .pay-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .pay-btn:hover {
+            background-color: #218838;
+        }
+        .payment-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Payment Method</h2>
+        <div class="payment-methods">
+            <button onclick="showPayment('card')" class="active" id="btn-card">Card</button>
+            <button onclick="showPayment('upi')" id="btn-upi">UPI</button>
+            <button onclick="showPayment('netbanking')" id="btn-netbanking">Net Banking</button>
+        </div>
+        
+        <div id="card" class="payment-section" style="display: block;">
+            <div class="form-group">
+                <label>Card Number:</label>
+                <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+            </div>
+            <div class="form-group">
+                <label>Expiry Date:</label>
+                <input type="text" placeholder="MM/YY" maxlength="5">
+            </div>
+            <div class="form-group">
+                <label>CVV:</label>
+                <input type="password" placeholder="123" maxlength="3">
+            </div>
+        </div>
+        
+        <div id="upi" class="payment-section">
+            <div class="form-group">
+                <label>UPI ID:</label>
+                <input type="text" placeholder="yourname@upi">
+            </div>
+        </div>
+        
+        <div id="netbanking" class="payment-section">
+            <div class="form-group">
+                <label>Select Bank:</label>
+                <select>
+                    <option value="">Choose Bank</option>
+                    <option value="SBI">State Bank of India</option>
+                    <option value="HDFC">HDFC Bank</option>
+                    <option value="ICICI">ICICI Bank</option>
+                    <option value="AXIS">Axis Bank</option>
+                </select>
+            </div>
+        </div>
+        
+        <button class="pay-btn" onclick="processPayment()">Pay Now</button>
+    </div>
+    
+    <script>
+        function showPayment(method) {
+            document.querySelectorAll('.payment-section').forEach(el => el.style.display = 'none');
+            document.getElementById(method).style.display = 'block';
+            
+            document.querySelectorAll('.payment-methods button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${method}`).classList.add('active');
+        }
+        
+        function processPayment() {
+            alert("Payment Successful!");
+            window.location.href = "confirmation.html";
+        }
+    </script>
+</body>
+</html>

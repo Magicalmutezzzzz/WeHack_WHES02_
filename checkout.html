@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tectonic - Checkout</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f0f8ff; }
+        header, footer { text-align: center; background-color: #13a5c2; color: white; padding: 20px; }
+        .container {
+            max-width: 800px; margin: 20px auto; background: white;
+            padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .course-list { list-style: none; padding: 0; }
+        .course-item { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd; }
+        .total { font-size: 18px; font-weight: bold; text-align: right; margin-top: 20px; }
+        .option-container, .details-container { margin-top: 20px; }
+        .option-container label, .details-container label { display: block; margin: 10px 0; }
+        .input-field {
+            width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px;
+        }
+        .checkout-btn {
+            display: block; width: 100%; padding: 10px; margin-top: 20px;
+            background-color: #28a745; color: white; border: none; border-radius: 5px;
+            cursor: pointer; font-size: 16px; text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+
+    <div class="container">
+        <h2>Your Cart</h2>
+        <ul class="course-list" id="cart-items"></ul>
+        <p class="total">Total: <span id="total-price">₹0</span></p>
+
+        <div class="details-container">
+            <h3>Enter Your Details</h3>
+            <label>Name:</label>
+            <input type="text" class="input-field" id="name" placeholder="Enter your full name" required>
+            
+            <label>Address:</label>
+            <input type="text" class="input-field" id="address" placeholder="Enter your address" required>
+            
+            <label>District:</label>
+            <input type="text" class="input-field" id="district" placeholder="Enter your district" required>
+
+            <label>State:</label>
+            <input type="text" class="input-field" id="state" placeholder="Enter your state" required>
+
+            <label>Pin Code:</label>
+            <input type="text" class="input-field" id="pincode" placeholder="Enter your pin code" required>
+        </div>
+
+        <div class="option-container">
+            <h3>Select Delivery Method</h3>
+            <label><input type="radio" name="delivery" value="pendrive" id="pendrive"> Pen Drive (+₹500)</label>
+            <label><input type="radio" name="delivery" value="memorycard" id="memorycard"> Memory Card (+₹300)</label>
+        </div>
+
+        <p class="total">Final Amount: <span id="final-price">₹0</span></p>
+        <button class="checkout-btn" onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+
+    <script>
+        const courses = [
+            { name: "UPSC Civil Services", price: "₹10000" },
+            { name: "SSC CGL", price: "₹5000" },
+            { name: "SSC MTS", price: "₹3000" },
+            { name: "JEE Mains", price: "₹8000" },
+            { name: "NEET UG", price: "₹6500" },
+            { name: "Banking Exams", price: "₹4500" },
+            { name: "Railways Exams", price: "₹3200" },
+            { name: "Machine Learning", price: "₹7000" },
+            { name: "Web Development", price: "₹6000" },
+            { name: "Cyber Security", price: "₹5500" },
+            { name: "AI & Deep Learning", price: "₹9000" },
+            { name: "Ethical Hacking", price: "₹6200" },
+            { name: "Cloud Computing", price: "₹7500" },
+            { name: "React.js & Frontend", price: "₹5800" },
+            { name: "Python Programming", price: "₹4500" },
+            { name: "C++ DSA Mastery", price: "₹5300" },
+            { name: "Data Science Bootcamp", price: "₹8200" },
+            { name: "Software Engineering", price: "₹6400" },
+            { name: "DevOps & Kubernetes", price: "₹7800" },
+            { name: "Android App Development", price: "₹5900" }
+        ];
+
+        function loadCart() {
+            const cartNames = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartItemsContainer = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const finalPriceElement = document.getElementById("final-price");
+
+            let total = 0;
+            cartItemsContainer.innerHTML = '';
+
+            cartNames.forEach(courseName => {
+                const course = courses.find(c => c.name === courseName);
+                if (course) {
+                    total += parseInt(course.price.replace("₹", ""));
+                    cartItemsContainer.innerHTML += `<li class="course-item"><span>${course.name}</span><span>${course.price}</span></li>`;
+                }
+            });
+
+            totalPriceElement.textContent = `₹${total.toLocaleString()}`;
+            finalPriceElement.textContent = `₹${total.toLocaleString()}`;
+
+            document.getElementById("pendrive").addEventListener("change", () => updateFinalPrice(total, 500));
+            document.getElementById("memorycard").addEventListener("change", () => updateFinalPrice(total, 300));
+        }
+
+        function updateFinalPrice(baseTotal, extraCost) {
+            document.getElementById("final-price").textContent = `₹${(baseTotal + extraCost).toLocaleString()}`;
+        }
+
+        function proceedToPayment() {
+            const name = document.getElementById("name").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const district = document.getElementById("district").value.trim();
+            const state = document.getElementById("state").value.trim();
+            const pincode = document.getElementById("pincode").value.trim();
+
+            if (!name || !address || !district || !state || !pincode) {
+                alert("Please fill in all the required fields!");
+                return;
+            }
+
+            alert(`Thank you ${name}! Redirecting to payment...`);
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>
